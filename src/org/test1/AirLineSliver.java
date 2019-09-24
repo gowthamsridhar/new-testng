@@ -7,18 +7,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class AirLineSliver {
+	static WebDriver driver;
+	@BeforeClass
+	 private void launch() {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\Greens-11\\Desktop\\gow\\TestNg\\driver\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.silverairways.com/");
+		driver.manage().window().maximize();
+		
+	}
+	
 	@Test
 	public void test() throws  Throwable {
-	System.setProperty("webdriver.chrome.driver",
-			"C:\\Users\\Greens-11\\Desktop\\gow\\TestNg\\driver\\chromedriver.exe");
-
-	WebDriver driver = new ChromeDriver();
-	driver.get("https://www.silverairways.com/");
-	driver.manage().window().maximize();
-	driver.findElement(By.xpath("(//input[@type='radio'])[1]")).click();
+	
+	
+	WebElement e1 = driver.findElement(By.xpath("(//input[@type='radio'])[1]"));
+	e1.click();
 	WebElement from = driver.findElement(By.xpath("(//fieldset[@class='booking_citysearch'])[1]"));
 	from.click();
 	WebElement cli = driver.findElement(By.xpath("(//a[@class='Silver'])[3]"));

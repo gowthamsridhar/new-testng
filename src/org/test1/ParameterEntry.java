@@ -13,7 +13,7 @@ public class ParameterEntry {
 	
 	@Parameters({"username","password"})
 	@Test
-	private void test1(@Optional("gow")String s1,@Optional("12345678")String s2) {
+	private void test1(String s1,String s2) {
 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Greens-11\\Desktop\\gow\\TestNg\\driver\\chromedriver.exe");
 	WebDriver driver=new ChromeDriver();
 	//hardassert (dont create obj because of this is static class)
@@ -27,7 +27,7 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\Greens-11\\Desktop\\go
 	pass.sendKeys(s2);
 	Assert.assertEquals("12345678", pass.getAttribute("value"));
 	
-	driver.findElement(By.id("login")).click();
+	
 	
 	
 	

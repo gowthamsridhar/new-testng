@@ -2,12 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
-    <parameter name="password" value="123456780"/>
-    <parameter name="username" value="gowtham"/>
     <classes>
       <class name="org.test1.ParameterEntry">
         <methods>
-          <include name="test1" invocation-numbers="0"/>
+          <include name="test1"/>
         </methods>
       </class> <!-- org.test1.ParameterEntry -->
     </classes>
